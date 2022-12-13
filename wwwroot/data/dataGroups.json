@@ -1,0 +1,24 @@
+{
+  "groups": [
+    {
+      "id": 1,
+      "name": "Parqueaderos",
+      "image": "./img/groups/ico-parqueadero-verde.png"
+    },
+    {
+      "id": 2,
+      "name": "Certificaciones",
+      "image": "./img/groups/ico-certificacion-verde.png"
+    },
+    {
+      "id": 3,
+      "name": "Cursos",
+      "image": "./img/groups/ico-cursos-verde.png"
+    },
+    {
+      "id": 4,
+      "name": "Arriendos",
+      "image": "./img/groups/ico-arriendos-verde.png"
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "group_id": 1,
+      "name": "Parqueadero Público Vehículos  Semestre",
+      "price": 499500
+    },
+    {
+      "id": 2,
+      "group_id": 1,
+      "name": "Parqueadero Público Vehículos Trimestre",
+      "price": 249750
+    },
+    {
+      "id": 3,
+      "group_id": 1,
+      "name": "Parqueadero Público Vehículos Mes",
+      "price": 83250
+    },
+    {
+      "id": 4,
+      "group_id": 1,
+      "name": "Parqueadero Público Motos  Semestre",
+      "price": 238500
+    },
+    {
+      "id": 5,
+      "group_id": 1,
+      "name": "Parqueadero Público Motos  Trimestre",
+      "price": 119250
+    },
+    {
+      "id": 6,
+      "group_id": 1,
+      "name": "Parqueadero Público Motos Mes",
+      "price": 39750
+    },
+    {
+      "id": 7,
+      "group_id": 1,
+      "name": "Parqueadero Circunvalar Vehículos  Semestre",
+      "price": 333700
+    },
+    {
+      "id": 8,
+      "group_id": 1,
+      "name": "Parqueadero Circunvalar Vehículos  Trimestre",
+      "price": 166850
+    },
+    {
+      "id": 9,
+      "group_id": 1,
+      "name": "Parqueadero Circunvalar Vehículos  Mes",
+      "price": 55600
+    },
+    {
+      "id": 10,
+      "group_id": 1,
+      "name": "Parqueadero Bicicletas Semestre",
+      "price": 0
+    },
+    {
+      "id": 11,
+      "group_id": 1,
+      "name": "Parqueadero Bicicletas Trimestre",
+      "price": 0
+    },
+    {
+      "id": 12,
+      "group_id": 1,
+      "name": "Parqueadero Bicicletas Mes",
+      "price": 0
+    },
+    {
+      "id": 20,
+      "group_id": 2,
+      "name": "Certificaciones",
+      "price": 12000
+    },
+    {
+      "id": 21,
+      "group_id": 3,
+      "name": "Curso Camillero",
+      "price": 569400
+    },
+    {
+      "id": 22,
+      "group_id": 3,
+      "name": "Toma de Muestras para Examenes de Laboratorio",
+      "price": 70000
+    },
+    {
+      "id": 23,
+      "group_id": 3,
+      "name": "Amputación y Protesis",
+      "price": 120000
+    },
+    {
+      "id": 24,
+      "group_id": 3,
+      "name": "Ruta de Atencion Integral en Salud Materno Perinatal",
+      "price": 240000
+    },
+    {
+      "id": 25,
+      "group_id": 3,
+      "name": "Atención Integral Victimas de Ataques con Agentes Quimicos",
+      "price": 70000
+    },
+    {
+      "id": 26,
+      "group_id": 3,
+      "name": "Humanización Servicios de Salud",
+      "price": 70000
+    },
+    {
+      "id": 27,
+      "group_id": 3,
+      "name": "Gestión del Duelo",
+      "price": 70000
+    },
+    {
+      "id": 28,
+      "group_id": 3,
+      "name": "Curso Básico de Ortopedia para Méedicos Generales",
+      "price": 120000
+    },
+    {
+      "id": 29,
+      "group_id": 3,
+      "name": "Lectura Interpretada del Antibiograma y Uso Racional de Antibióticos",
+      "price": 150000
+    },
+    {
+      "id": 30,
+      "group_id": 3,
+      "name": "Cardiología al Alcance de Todos",
+      "price": 120000
+    },
+    {
+      "id": 31,
+      "group_id": 3,
+      "name": "Preparación para Médicos Generales Servicios de Urología",
+      "price": 90000
+    },
+    {
+      "id": 32,
+      "group_id": 3,
+      "name": "Epidemiología para No Epidemiólogos",
+      "price": 200000
+    },
+    {
+      "id": 33,
+      "group_id": 3,
+      "name": "Curso Básico de Reanimación Cardio Cerebro Pulmonar",
+      "price": 139300
+    },
+    {
+      "id": 34,
+      "group_id": 3,
+      "name": "Atención Integral a Victimas de Violencia Sexual",
+      "price": 70000
+    },
+    {
+      "id": 51,
+      "group_id": 4,
+      "name": "Arriendo",
+      "price": 1000000
+    }
+  ]
+}

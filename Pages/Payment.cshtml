@@ -1,0 +1,192 @@
+﻿@page
+@model WebPaymentGateway.Pages.PaymentModel
+@{
+    ViewData["Title"] = "Payment";
+}
+
+<!-- Initial Page -->
+<div class="container">
+    <div>
+        <h1>¿Como quieres pagar?</h1>
+        <a class="d-none btn btn-return">&larr; Regresar</a>
+    </div>
+    <div class="grid-view">
+        <div class="content-paid">
+            <!-- Methods paid -->
+            <div id="optionPaid" class="d-none">
+                <form id="formMethod">
+                    <div>
+                        <div id="ownCards">
+                        </div>
+                        <div class="input-radio">
+                            <input type="radio" id="creditCard" name="methodPaid" value="credit">
+                            <label for="creditCard">Nueva tarjeta de crédito</label>
+                        </div>
+                        <div class="input-radio">
+                            <input type="radio" id="debitCard" name="methodPaid" value="debit">
+                            <label for="debitCard">Nueva tarjeta de débito</label>
+                        </div>
+                    </div>
+                    <div>
+                        
+                        <div class="input-radio">
+                            <input type="radio" id="pse" name="methodPaid" value="pse">
+                            <label for="pse">Transferencia desde tu banco con PSE</label>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Pago directo</h2>
+                        <div class="d-flex justify-content-center">
+                            <button class="js-payment-checkout btn">Pago directo con tarjeta</button>
+                        </div>
+                        <div>
+                            <div id="response"></div>
+                        </div>
+                     </div>
+                    <div class="position-button">
+                        <button class="btn">Continuar</button>
+                    </div>
+                </form>
+            </div>
+            <!-- Card Method -->
+            <div id="divCardForm" class="cardMethod d-none">
+                <div>
+                    <h2>Ingresa una nueva tarjeta</h2>
+                </div>
+                <div>
+                    <div class="card">
+                        <section class="tarjeta" id="tarjeta">
+                            <div class="delantera">
+                                <div class="logo-marca" id="logo-marca">
+                                </div>
+                                <img src="img/chip-tarjeta.png" class="chip" alt="">
+                                <div class="datos">
+                                    <div class="grupo" id="numero">
+                                        <p class="label">Número Tarjeta</p>
+                                        <p class="numero">#### #### #### ####</p>
+                                    </div>
+                                    <div class="flexbox">
+                                        <div class="grupo" id="nombre">
+                                            <p class="label">Nombre Tarjeta</p>
+                                            <p class="nombre"></p>
+                                        </div>
+
+                                        <div class="grupo" id="expiracion">
+                                            <p class="label">Expiracion</p>
+                                            <p class="expiracion"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="trasera">
+                                <div class="barra-magnetica"></div>
+                                <div class="datos">
+                                    <div class="grupo" id="firma">
+                                        <p class="label">Firma</p>
+                                        <div class="firma">
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="grupo" id="ccv">
+                                        <p class="label">CCV</p>
+                                        <p class="ccv"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <form id="add-card-form">
+                    <!-- <div class="payment-form" id="my-card" data-capture-name="true"></div> -->
+                    <div class="payment-form" id="my-card" data-capture-name="true">
+                        <input class="card-number my-custom-class" id="card-number" name="card-number" placeholder="Numero de tarjeta">
+                        <input class="name" id="the-card-name-id" placeholder="Nombre de la tarjeta">
+                        <input class="expiry-month" id="exp-month" name="expiry-month">
+                        <input class="expiry-year" id="exp-year" name="expiry-year">
+                        <input class="cvc" id="cvc" name="cvc">
+                    </div>
+                    <div class="position-button">
+                        <button class="btn">Continuar</button>
+                    </div>
+                    <br />
+                    <div id="messages"></div>
+                </form>
+            </div>
+            <!-- PSE FORM -->
+            <div id="divPseForm" class="d-none">
+                <div>
+                    <h2>¿Cuál es tu banco?</h2>
+                </div>
+                <form id="pseForm">
+                    <div id="listBank">
+                    </div>
+                    <div class="position-button">
+                        <button class="btn">Continuar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Confirmar pago -->
+            <div id="confirmTransfer" class="d-none">
+                <form id="confirmForm">
+                    <h2>Confirmación de compra</h2>
+                    <div>
+                        <h3>Metodo de pago seleccionado: <span id="type-method"></span></h3>
+                    </div>
+                    <h2>Detalles del pago</h2>
+                    <div class="additional-info-paid">
+                    </div>
+                    <div class="position-button">
+                        <button id="confirmBtn" class="btn d-none">Continuar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- GO TO PSE -->
+            <div id="divPseTransfer" class="d-none">
+                <div>
+                    <h1>Tranferencia a través de PSE para completar tu compra</h1>
+                    <div>
+                        <h2>Tienes 20 minutos para completar la compra</h2>
+                        <a class="mb-4" id="btnToPSE">Ir a PSE</a>
+                    </div>
+                    @*<div>
+                        <h3 class="m-5">Desarrollo:</h3>
+                        <p>Link Verificar Estado: <span id="linkData"></span></p>
+                        <p>Token : <span id="tokenData"></span></p>
+                    </div>*@
+                </div>
+            </div>
+
+            <div id="mensaje-bugueado"></div>
+            <div id="spin">
+                <div class="spin"></div>
+                <div id="spinMessage">
+                </div>
+            </div>
+        </div>
+        <!-- Product -->
+        <div class="content-product text-center">
+            <!-- <div>
+                <img class="image-service" alt="imagen servicio">
+            </div> -->
+
+            <div>
+                <div>
+                    <h2 id="titleService"></h2>
+                    <h3>Costo</h3>
+                    <p>$ <span id="priceService"></span></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@*<script src="https://cdn.paymentez.com/ccapi/sdk/payment_checkout_stable.min.js"></script>
+<link href="https://cdn.paymentez.com/ccapi/sdk/payment_stable.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.paymentez.com/ccapi/sdk/payment_stable.min.js" charset="UTF-8"></script>*@
+
+@*<script src="js/apis.js"></script>
+<script src="js/payment/variables.js"></script>
+<script src="js/payment/events.js"></script>*@
